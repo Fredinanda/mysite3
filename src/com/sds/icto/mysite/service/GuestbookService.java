@@ -24,5 +24,4 @@ public class GuestbookService {
 	public void deleteGuestbookItem( GuestbookVo vo ) {
 		guestbookDao.delete(vo);
 	}
-
 }

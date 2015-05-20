@@ -10,8 +10,8 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<jsp:include page = "/views/include/header.jsp" flush="false"/>
+	<div id="header">
+			<jsp:include page = "/WEB-INF/views/include/header.jsp" flush="false"/>
 		</div>
 		
 		<div id="navigation">

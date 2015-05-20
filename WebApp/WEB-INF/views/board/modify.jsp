@@ -11,8 +11,9 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<jsp:include page = "/views/include/header.jsp" flush="false"/>
-		</div>
+				<jsp:include page = "/WEB-INF/views/include/header.jsp" flush="false"/>
+			</div>
+
 		
 		<div id="navigation">
 			<c:import url="/views/include/navigation.jsp" >
