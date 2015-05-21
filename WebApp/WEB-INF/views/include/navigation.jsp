@@ -6,19 +6,19 @@
 		<li>제민재</li>
 		<li class="selected"><a href="/mysite3/index">메인</a></li>
 		<li><a href="/mysite3/guestbook">방명록</a></li>
-		<li><a href="/mysite3/bd">게시판</a></li>
+		<li><a href="/mysite3/board">게시판</a></li>
 		</c:when>
 		<c:when test="${param.type=='guest'}">
 		<li>제민재</li>
 		<li><a href="/mysite3/index">메인</a></li>
 		<li class="selected"><a href="/mysite3/guestbook">방명록</a></li>
-		<li><a href="/mysite3/bd">게시판</a></li>
+		<li><a href="/mysite3/board">게시판</a></li>
 		</c:when>
 		<c:when test="${param.type=='board'}">
 		<li>제민재</li>
 		<li><a href="/mysite3/index">메인</a></li>
 		<li><a href="/mysite3/guestbook">방명록</a></li>
-		<li class="selected"><a href="/mysite3/bd">게시판</a></li>
+		<li class="selected"><a href="/mysite3/board">게시판</a></li>
 		</c:when>
 		
 		
@@ -27,7 +27,7 @@
 		<li class="selected">제민재</li>
 		<li><a href="/mysite3/index">메인</a></li>
 		<li><a href="/mysite3/guestbook">방명록</a></li>
-		<li><a href="/mysite3/bd">게시판</a></li>
+		<li><a href="/mysite3/board">게시판</a></li>
 		</c:otherwise>
 	
 	</c:choose>

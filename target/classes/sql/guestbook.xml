@@ -26,7 +26,8 @@
     
  <select id="list" resultMap="resultMapList">
  <![CDATA[ 
-		select no, name, password, message, reg_date 
+		select no, title, content, 
+		 member_no, member_name, view_Cnt, reg_Date
 		from guestbook
 
   ]]> 
