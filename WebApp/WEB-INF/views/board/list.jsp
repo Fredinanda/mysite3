@@ -23,10 +23,13 @@
 		
 		<div id="content">
 			<div align="center">
-				<img src="/mysite3/WEB-INF/views/board/images/smd.png" 	width="540px">
+				<img src="/mysite3/assets/images/smd.png" 	width="540px">
 			</div>
 			
 				<table class="tbl-ex" border="1">
+					
+					
+
 							
 				<tr>
 					<th>no</th>
@@ -35,10 +38,10 @@
 					<th>date</th>
 					<th>hit</th>
 				</tr>
-				<c:forEach items="${List}" var="vo">
+				<c:forEach items="${list}" var="vo">
 				<tr>
 					<td>${vo.no }</td>
-					<td class="title"><a href="/mysite3/bd?a=read&no=${vo.no }">${vo.title }</a></td>
+					<td class="title"><a href="board/select/${vo.no }">${vo.title }</a></td>
 					<td>${vo.memberName }</td>
 					<td>${vo.date }</td>
 					<td>${vo.viewCnt }</td>
@@ -50,7 +53,7 @@
 			
 			<div class="write">
 			<c:if test="${authMember.name !=null }" >
-			<a href="/mysite3/WEB-INF/views/board/wirte.jsp"><img src="/mysite3/WEB-INF/views/board/images/write.png"></a>
+			<a href="board/write"><img src="/mysite3/assets/images/write.png"></a>
 			</c:if>
 	
 			

@@ -44,6 +44,7 @@ public class memberController {
 		}
 		//로긴성공
 		session.setAttribute("authMember", membervo);
+	
 		return "redirect:/index";
 	}
 	

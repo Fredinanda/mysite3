@@ -14,37 +14,30 @@
 			<jsp:include page = "/WEB-INF/views/include/header.jsp" flush="false"/>
 		</div>
 		
-		<div id="navigation">
-			<c:import url="/views/include/navigation.jsp" >
-			<c:param name="type" value="guest"></c:param>
-			</c:import>
-		</div>
-		
 		
 		
 		<div id="content">
 			<br>
-			<form action="/mysite3/bd" method="post">
-					<input type="hidden" name="a" value="insert">
-					<input type="hidden" value="${authMember.no}" id="member_no" name="member_no">
-					<input type="hidden" value="${authMember.name}"id="member_name" name="member_name"> 
-			<div class="title">
+			<form action="" method="post">
+				<input type="hidden" value="${authMember.no}" id="memberNo" name="memberNo">
+				<input type="hidden" value="${authMember.name}" id="memberName" name="memberName"> 
+		<div class="title">
 			제목
 			<input type="text" size="69" name="title" value="제목을 입력하세요.">
 			</div>
 			
 			<div class="text">
 			내용
-			<TEXTAREA NAME=txt id=txt COLS=71 ROWS=10 ></TEXTAREA>
+			<TEXTAREA NAME=content id=content COLS=71 ROWS=10 >내용을 입력하세요</TEXTAREA>
 			</div>
 			<div>
 			<br>
 			<div align="right">
 				
-				<input class= "imgs" type="image" src="/mysite3/WEB-INF/views/board/images/write.png" value="write">
+				<input class= "imgs" type="image" src="/mysite3/assets/images/write.png" value="write">
 							
-				<a href ="/mysite3/WEB-INF/views/board/list.jsp">
-				<img class="imgs" src="/mysite3/WEB-INF/views/board/images/cancel.png" alt="���">
+				<a href ="/mysite3/board">
+				<img class="imgs" src="/mysite3/assets/images/cancel.png" alt="���">
 				</a>
 			</div>
 			<Br>
@@ -58,9 +51,17 @@
 	
 		
 	
+	<div id="navigation">
+		
+			<c:import url="/WEB-INF/views/include/navigation.jsp" >
+				<c:param name="type" value="board"></c:param>
+			</c:import>
+		</div>
+
 	<div id="footer">
 			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-	</div>	
+			
+		</div>	
 	
 	</div>	
 

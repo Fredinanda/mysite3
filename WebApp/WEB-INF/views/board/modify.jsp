@@ -15,11 +15,7 @@
 			</div>
 
 		
-		<div id="navigation">
-			<c:import url="/views/include/navigation.jsp" >
-			<c:param name="type" value="guest"></c:param>
-			</c:import>
-		</div>
+
 		
 		
 		
@@ -57,12 +53,17 @@
 			
 				
 	
-	
+<div id="navigation">
 		
-	
+			<c:import url="/WEB-INF/views/include/navigation.jsp" >
+				<c:param name="type" value="board"></c:param>
+			</c:import>
+		</div>
+
 	<div id="footer">
 			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-	</div>	
+			
+		</div>	
 	
 	</div>	
 

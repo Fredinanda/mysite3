@@ -1,19 +1,15 @@
 package com.sds.icto.mysite.repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.sds.icto.mysite.domain.*;;
+import com.sds.icto.mysite.domain.boardVo;
 
 
 @Repository
@@ -24,42 +20,46 @@ public class boardDao {
 	SqlMapClientTemplate sqlmapclienttemplate;
 	
 	public void insert( boardVo vo ) {
-			
-			
-			//String sql = "INSERT INTO BOARD VALUES (board_no_seq.nextval, ?, ?, ?, ?, 1, SYSDATE)";
-	
-			
-		}
-		
-		public List<boardVo> fetchList(){ 
-			
-			List<boardVo> list = sqlmapclienttemplate.queryForList("board.list");
-			
-			return list;
-		}
-		
-		public boardVo read(long no) {
-			
-			boardVo vo = null;
-			
-			
-			//String sql = "select * from board where no=?";
-			
-			return vo;
+		sqlmapclienttemplate.insert("board.insert", vo);
 		}
 	
-		public void update(boardVo update)  {
-			
-			//String sql = "update board set title=?, content=? where no=?";
-			
-		}
-		
-		public void delete(long no) {
-			
-		//"delete from board where no=?";
-		
-		}
 	
+	
+	@SuppressWarnings("unchecked")
+	public List<boardVo> fetchList(){ 
+		List<boardVo> list = sqlmapclienttemplate.queryForList("board.list");
+		return list;
+	}
+	
+	
+	public boardVo read(Long no) {
+		
+		boardVo vo = (boardVo) sqlmapclienttemplate.queryForObject("board.select", no);
+		return vo;
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void updateBoard( String title, String content){
+		
+		{
+			Map map = new HashMap();
+			map.put("title", title);
+			map.put("content", content);
+			sqlmapclienttemplate.update("board.updateBoard", map);
+			
+		}
+		
+	}
+	
+
+	public void delete(Long no) {
+	
+		sqlmapclienttemplate.delete("board.delete", no);
+	
+		
+	
+	}
+
 	
 	
 }

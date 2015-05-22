@@ -16,39 +16,46 @@
 			<jsp:include page = "/WEB-INF/views/include/header.jsp" flush="false"/>
 		</div>
 		
-		<div id="navigation">
-			<c:import url="/WEB-INF/views/include/navigation.jsp" >
-			<c:param name="type" value="guest"></c:param>
-			</c:import>
-		</div>
-		
-		
+
+	
 		
 		<div id="content">
 			
+			
 			<table>
 				<tr>
-					<td class="shotlint">${select.no}</td>
+					<td class="shotlint">${vo.no}</td>
 					<td class="longline">title</td>
-					<td class="midline">날자 ${select.date}</td>
+					<td class="midline">날자 ${vo.date}</td>
 				</tr>
 				
 				<tr>
-					<td class="shotlint">작성자 ${select.memberName}</td>
-					<td class="longline">${select.title}</td>
-					<td class="midline">조회수 ${select.viewCnt}</td>
+					<td class="shotlint">작성자 ${vo.memberName}</td>
+					<td class="longline">${vo.title}</td>
+					<td class="midline">조회수 ${vo.viewCnt}</td>
 				</tr>
 				</table>
 				<div class="areabox">
-					${select.content }
+					${vo.content }
 				</div>
 				
 				<div class="bottombox">
 				<br>
-					 	<c:if test="${authMember.name !=null }" ><a class ="imgs" href="/mysite3/WEB-INF/views/board/wirte.jsp"><img src="/mysite/views/board/images/write.png" alt="글쓰기"></a></c:if>
-					 <c:if test="${authMember.name == select.memberName }"><a class ="imgs" href="/mysite3/bd?a=modify&no=${select.no }"><img src="/mysite3/WEB-INF/views/board/images/modify.png" alt="글수정"></a></c:if> 
-					 <c:if test="${authMember.name == select.memberName }"> <a class ="imgs" href="/mysite3/bd?a=delete&no=${select.no }"><img src="/mysite3/WEB-INF/views/board/images/delete.png" alt="삭제"></a></c:if> 
-					 <a class ="imgs" href="/mysite3/bd"><img src="/mysite3/WEB-INF/views/board/images/list.png" alt="리스트"></a>
+			 	<c:if test="${authMember.name !=null }" >
+			 	<a class ="imgs" href="/mysite3/board/wirte"><img src="/mysite3/assets/images/write.png" alt="글쓰기"></a>
+			 	</c:if>
+				 
+				 
+				 <c:if test="${authMember.name == vo.memberName }">
+				 <a class ="imgs" href="/mysite3/board/update/${vo.no }"><img src="/mysite3/assets/images/modify.png" alt="글수정"></a></c:if> 
+				 
+				 
+				 <c:if test="${authMember.name == vo.memberName }"> 
+				 <a class ="imgs" href="/mysite3/board/delete/${vo.no }"><img src="/mysite3/assets/images/delete.png" alt="삭제"></a></c:if> 
+				 
+				 <a class ="imgs" href="/mysite3/board"><img src="/mysite3/assets/images/list.png" alt="리스트"></a>
+				
+				
 				</div>
 				
 				<!-- <div class="list">
@@ -58,14 +65,20 @@
 		</div>
 			
 				
+				
+				
 	
-	
+		<div id="navigation">
 		
-	
+			<c:import url="/WEB-INF/views/include/navigation.jsp" >
+				<c:param name="type" value="board"></c:param>
+			</c:import>
+		</div>
+
 	<div id="footer">
 			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-	</div>	
-	
+			
+		</div>	
 	</div>	
 
 </body>
